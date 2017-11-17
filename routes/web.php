@@ -15,5 +15,9 @@ Route::get('/', function () {
     return view('inicio.index');
 });
 
+Route::get('/endereco', function () {
+    return view('inicio.ind');
+});
+
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
