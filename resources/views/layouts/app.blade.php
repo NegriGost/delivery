@@ -20,6 +20,7 @@
     <link href="{{asset('css/workaround.css')}}" rel="stylesheet">
     <link href="{{asset('css/estilo.css')}}" rel="stylesheet">
 
+ 
   </head>
 
   <body>
@@ -42,7 +43,10 @@
     <script src="{{asset('js/jQuery-2.1.4.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}/"></script>
     <script src="{{asset('js/workaround.js')}}"></script>
+   
     <script type="text/javascript">
+
+
     var current_fs, next_fs, previous_fs; 
     var left, opacity, scale; 
     var animating;
@@ -110,26 +114,7 @@
     
     </script>
 
-    <!-- Mapa auto-complete -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places">
-      
-      google.maps.event.addDomListener(window,'load',intilize);
-      var auto_complete=new google.maps.places.Autocomplete(document.getElementById('txt_endereco'));
-
-      google.maps.events.AddListener(autocomplete,'plac_changed',function(){
-
-        var places=autocomplete.getPlace();
-        var location='<b>Location:</b>'+places.formatted_address+"<br>";
-
-        location+="<b>Latitude:<b>"+places.geometry.location.A+"<br>";
-
-           location+="<b>Longitude:<b>"+places.geometry.location.F+"<br>";
-
-      });
-
-      document.getElementById('txt_endereco').innerHtml=location;
-
-    </script>
+   
 
     
 </body>
