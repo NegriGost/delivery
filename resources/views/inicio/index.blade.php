@@ -4,7 +4,7 @@
 <div class="jumbotron jumbotron-index text-center">
   <br><br><br><br>
   <h1>Ache ja, o seu prato predileto<br>Onde quer que esteja.</h1>
-  <form class="form-inline" method="post" action="{{url('lista_de_restaurante')}}">
+  <form class="form-inline" method="get" action="{{url('lista_de_restaurante')}}">
     <!--csrf_field-->
     {{csrf_field()}}
     <div class="input-group">

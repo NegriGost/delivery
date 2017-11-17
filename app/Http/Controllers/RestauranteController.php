@@ -14,7 +14,7 @@ class RestauranteController extends Controller
     	$longitude=$local['lat'];
 
     	
-    	Mapper::map($latitude,$longitude);
+    	Mapper::map(-25.8962418,32.5406427);
 
     	return view('restaurantes.mapa');
 
