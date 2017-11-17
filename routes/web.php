@@ -21,10 +21,10 @@ Route::get('/mapa', function () {
 
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
-<<<<<<< HEAD
-=======
+
+
 
 //=================================REstaurantes=========================================
 
 Route::post('/lista_de_restaurante','RestauranteController@index');
->>>>>>> rodrigues
+
