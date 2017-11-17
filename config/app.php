@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Cornford\Googlmapper\MapperServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Cornford\Googlmapper\MapperServiceProvider::class,
 
     ],
 
@@ -230,6 +231,7 @@ return [
         'Mapper'         => Cornford\Googlmapper\Facades\MapperFacade::class,
         'Input' => Illuminate\Support\Facades\Input::class,
         'Socialite' =>Laravel\Socialite\Facades\Socialite::class,
+        'Mapper'         => Cornford\Googlmapper\Facades\MapperFacade::class,
 
     ],
 
