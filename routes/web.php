@@ -24,4 +24,4 @@ Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallba
 
 //=================================REstaurantes=========================================
 
-Route::get('/lista_de_restaurante','RestauranteController@index');
+Route::post('/lista_de_restaurante','RestauranteController@index');

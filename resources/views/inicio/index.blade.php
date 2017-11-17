@@ -4,11 +4,12 @@
 <div class="jumbotron jumbotron-index text-center">
   <br><br><br><br>
   <h1>Ache ja, o seu prato predileto<br>Onde quer que esteja.</h1>
-  <form class="form-inline" method="get" action="{{url('lista_de_restaurante')}}">
+  
+  <form class="form-inline" method="post" action="{{url('lista_de_restaurante')}}">
     <!--csrf_field-->
     {{csrf_field()}}
     <div class="input-group">
-      <input type="text" class="form-control input-lg" id="txt_autocomplete" size="50" placeholder="Informe o seu endereco">
+      <input type="text" class="form-control input-lg" name="txt_autocomplete" id="txt_autocomplete" size="50" placeholder="Informe o seu endereco">
       <div class="input-group-btn">
         <button type="submit" class="btn btn-success btn-lg" >Buscar</button>
       </div>
