@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicio.index');
 });
 
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
