@@ -1,15 +1,16 @@
-
 @extends('layouts.app')
 <!--Definicao de Jumbotron-->
 @section('jumbotron')
 <div class="jumbotron jumbotron-index text-center">
   <br><br><br><br>
   <h1>Ache ja, o seu prato predileto<br>Onde quer que esteja.</h1>
-  <form class="form-inline" method="post" action="/lista_restaurantes">
+  <form class="form-inline" method="post" action="{{url('lista_de_restaurante')}}">
+    <!--csrf_field-->
+    {{csrf_field()}}
     <div class="input-group">
       <input type="text" class="form-control input-lg" id="txt_autocomplete" size="50" placeholder="Informe o seu endereco">
       <div class="input-group-btn">
-        <button type="button" class="btn btn-success btn-lg" >Buscar</button>
+        <button type="submit" class="btn btn-success btn-lg" >Buscar</button>
       </div>
     </div>
   </form>
@@ -56,7 +57,11 @@
 
 
    <!-- Mapa auto-complete -->
+<<<<<<< HEAD
    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-gE5I_0LYmfTS0B3C3EGOh85Ea9sd7Bo&libraries=places"></script>
+=======
+   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnOio2-38aqc86jOFG4soPgvx6lVDIPRc&libraries=places"></script>
+>>>>>>> rodrigues
     
     <script type="text/javascript">
       google.maps.event.addDomListener(window,'load',function(){

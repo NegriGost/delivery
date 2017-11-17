@@ -15,9 +15,16 @@ Route::get('/', function () {
     return view('inicio.index');
 });
 
-Route::get('/endereco', function () {
-    return view('inicio.ind');
+Route::get('/mapa', function () {
+    return view('restaurantes.mapa');
 });
 
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+<<<<<<< HEAD
+=======
+
+//=================================REstaurantes=========================================
+
+Route::post('/lista_de_restaurante','RestauranteController@index');
+>>>>>>> rodrigues
