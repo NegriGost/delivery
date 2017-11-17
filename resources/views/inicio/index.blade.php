@@ -6,8 +6,14 @@
   <br><br><br><br>
   <h1>Ache ja, o seu prato predileto<br>Onde quer que esteja.</h1>
   <form class="form-inline">
-   	<a href="{{url('form_login')}}" class="btn btn-success btn-lg ">Adira a sua comida</a>
+    <div class="input-group">
+      <input type="email" class="form-control input-lg" size="50" placeholder="Informe o seu endereco">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-success btn-lg" >Buscar</button>
+      </div>
+    </div>
   </form>
+
 </div>
 @endsection
 
