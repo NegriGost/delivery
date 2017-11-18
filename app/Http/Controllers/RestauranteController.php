@@ -52,4 +52,9 @@ class RestauranteController extends Controller
 
     	// return view('restaurantes.lista_restaurante')->with('output');
     }
+
+
+    public function compras($id){
+    	return view('restaurantes.carrinho');
+    }
 }
