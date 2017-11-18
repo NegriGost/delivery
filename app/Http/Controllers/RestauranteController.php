@@ -11,10 +11,10 @@ class RestauranteController extends Controller
     public function index(Request $request){
 
     	//$local= @unserialize(file_get_contents('http://ip-api.com/php'));
-    	 if(!isset($request->txt_autocomplete)){
-                $errors=['Preencha O fromulario!!!'];
-                return view('cliente.create',compact('errors'));
-          }
+    	  $this->validate($request,[
+                'txt_autocomplete'=>'required',
+           ]);
+
     	
 	    	$endereco=$request->txt_autocomplete;
 
