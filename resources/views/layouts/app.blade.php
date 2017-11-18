@@ -43,6 +43,41 @@
     <script src="{{asset('js/jQuery-2.1.4.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}/"></script>
     <script src="{{asset('js/workaround.js')}}"></script>
+
+<!-- Processso de Drag and Drop -->
+<script type="text/javascript">
+   $('.area_drag_protuto').on('dragover',function(){
+    $(this).addClass('produto_drag_over');
+    return false;
+  });
+
+
+  $('.area_drag_protuto').on('dragleave',function(){
+    $(this).removeClass('produto_drag_over');
+    return false;
+  });
+
+   $('.img-drag').on('dragstart',function(e){
+    // $(this).removeClass('produto_drag_over');
+    e.originalEvent.dataTransfer.setData('id',$(this).data('id'))
+  });
+
+    $('.area_drag_protuto').on('drop',function(e){
+      e.preventDefault();
+      $(this).removeClass('produto_drag_over');
+        alert("Dropped");
+        var action="add";
+        $.ajax({
+
+          url:"/lista_de_produtos",
+
+
+
+        });
+        //definir as variaveis que vao assuir o servidor  com ajax
+  });
+
+</script>
    
     <script type="text/javascript">
 
