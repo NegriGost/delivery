@@ -43,9 +43,9 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function redirectToProvider()
+    public function redirectToProvider($service)
     {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver($service)->redirect();
     }
 
     /**
@@ -53,10 +53,9 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function handleProviderCallback()
+    public function handleProviderCallback($service)
     {
-        $user = Socialite::driver('facebook')->user();
-
-       return $user->name;
+        $user =Socialite::driver($service)->stateless()->user();
+        return $user->name." ".$user->email;
     }
 }

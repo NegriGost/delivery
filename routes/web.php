@@ -15,12 +15,11 @@ Route::get('/', function () {
     return view('inicio.index');
 });
 
-Route::get('/mapa', function () {
-    return view('restaurantes.mapa');
-});
+Route::get('/mapa','RestauranteController@mapa');
 
-Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
-Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+//Routes de Login com redes sociais
+Route::get('login/{service}', 'Auth\LoginController@redirectToProvider');
+Route::get('login/{service}/callback', 'Auth\LoginController@handleProviderCallback');
 
 //=================================REstaurantes=========================================
 
@@ -33,7 +32,7 @@ Route::get('/lista_de_restaurantes',function(){
 Route::get('/carrinho_de_compras/{id}','RestauranteController@compras');
 Route::get('/produtos','ProdutoController@compra');
 Route::get('/pagamentos','ProdutoController@compra');
-
+Route::get('/facebook','RestauranteController@conexao_facebook');
 // session_start();
 
 // if($_POST["action"]=="add"){

@@ -35,10 +35,18 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
-    'facebook' => [
-    'client_id' => '527937587573622',         // Your GitHub Client ID
-    'client_secret' => '2a00cbc2cc7040492c23d4f6b330bde0', // Your GitHub Client Secret
-    'redirect' => 'http://localhost:8000/login/facebook/callback',
-   ],
+    'google' => [
+        'client_id' => '295158956739-e343goimsi8inmk1t0kejh133jpob05r.apps.googleusercontent.com',         // Your GitHub Client ID
+        'client_secret' => 'PAvEeOJhMuQ0pmpM8ixZwTRi', // Your GitHub Client Secret
+        'redirect' => 'http://swakuda.delivery.com/login/google/callback',
+    ],
+
+     'facebook' => [
+        'client_id' => '1895387320681799',         // Your GitHub Client ID
+        'client_secret' => 'f390c11dcabb68e8c385b2acc17ff235', // Your GitHub Client Secret
+        'redirect' => 'http://swakuda.delivery.com/login/facebook/callback',
+    ],
+
+
 
 ];

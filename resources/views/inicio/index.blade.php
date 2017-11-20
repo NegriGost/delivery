@@ -16,6 +16,25 @@
     </div>
   </form>
 
+      <div class="row text-center" style="padding-top:180px">
+        <div class="col-md-4">
+          <img src='https://img.pystatic.com/home-steps/step-1-food.png' class='content_steps_img' href=''>
+          <span>1. Escolha sua comida</span>
+          <span>Mais de 10 restaurantes com delivery online.</span>
+        </div>
+
+        <div class="col-md-4">
+           <img src='https://img.pystatic.com/home-steps/step-2-payment.png' class='content_steps_img' href=''><span class='step_title'>2. Faça seu pedido</span>
+            <span class='step_subtitle'>É fácil e rápido. Você pode pagar online ou na entrega.</span>
+        </div>
+
+        <div class="col-md-4">
+          <img src='https://img.pystatic.com/home-steps/step-3-delivery.png' class='content_steps_img' href=''><span class='step_title'>3. Receba sua comida</span>
+          <span class='step_subtitle'>O restaurante entrega o pedido na sua porta.</span>
+        </div>
+
+      </div>
+
 </div>
 @endsection
 
