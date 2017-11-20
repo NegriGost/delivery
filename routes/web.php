@@ -31,3 +31,47 @@ Route::get('/lista_de_restaurantes',function(){
 });
 
 Route::get('/carrinho_de_compras/{id}','RestauranteController@compras');
+Route::get('/produtos','ProdutoController@compra');
+Route::get('/pagamentos','ProdutoController@compra');
+
+// session_start();
+
+// if($_POST["action"]=="add"){
+
+
+//     	if(isset($_SESSION['carrinho'])){
+
+//     		$item_array_id=array_column($_SESSION["carrinho"],"item_id");
+
+//     		if(!in_array($_POST["id"],$item_array_id)){
+
+//     			$count=count($_SESSION['carrinho']);
+
+//     			$item_array=array(
+//     					'item_id'=>$_POST['id'],
+// 		    			'item_nome'=>$_POST['nome'],
+// 		    			'item_preco'=>$_POST['preco'],
+// 		    			'item_qtd'=>'1',
+
+//     			);
+
+//     			$_SESSION['carrinho'][$count]=$item_array;
+
+
+//     		}else{
+//     			echo "<script>alert('Esse Produto Ja foi adicionado')</script";
+//     		}
+    		
+//     	}else{
+
+//     		$item_array=array(
+//     			'item_id'=>$_POST['id'],
+//     			'item_nome'=>$_POST['nome'],
+//     			'item_preco'=>$_POST['preco'],
+//     			'item_qtd'=>'1',
+//     		);
+//     		$_SESSION['carrinho'][0]=$item_array;
+//     	}
+
+//     	}
+//     }

@@ -12,8 +12,7 @@ body {
 
 .produto_drag_over{
     color:black;
-    border-color:red;
-    background-color:red;
+    border:2px dashed green;
 }
 
 .badge {

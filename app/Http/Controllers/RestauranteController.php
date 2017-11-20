@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Mapper;
-
+use App\Produto;
 class RestauranteController extends Controller
 {
     
@@ -55,6 +55,9 @@ class RestauranteController extends Controller
 
 
     public function compras($id){
-    	return view('restaurantes.carrinho');
+    	$produto=Produto::all();
+        return view('restaurantes.carrinho',compact('produto'));
     }
+
+
 }
