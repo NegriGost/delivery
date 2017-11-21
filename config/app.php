@@ -179,6 +179,7 @@ return [
         Cornford\Googlmapper\MapperServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Cornford\Googlmapper\MapperServiceProvider::class,
+        Nexmo\Laravel\NexmoServiceProvider::class,
 
     ],
 
@@ -232,6 +233,7 @@ return [
         'Input' => Illuminate\Support\Facades\Input::class,
         'Socialite' =>Laravel\Socialite\Facades\Socialite::class,
         'Mapper'         => Cornford\Googlmapper\Facades\MapperFacade::class,
+        'Nexmo' => Nexmo\Laravel\Facade\Nexmo::class,
 
     ],
 
