@@ -28,7 +28,7 @@ Route::get('/form_registar_cliente', function () {
 });
 
 Route::get('/form_login_cliente', function () {
-    return view('cliente.login_cliente');
+    return view('clientes.login_cliente');
 });
 
 //=================================REstaurantes=========================================
