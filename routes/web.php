@@ -23,6 +23,9 @@ Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 
 
+Route::get('/form_registar_cliente', function () {
+    return view('clientes.registar_cliente');
+});
 
 //=================================REstaurantes=========================================
 
