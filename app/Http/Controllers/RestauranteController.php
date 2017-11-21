@@ -67,12 +67,14 @@ class RestauranteController extends Controller
     }
 
     public function imgupload(){
+
         if(Input::hasFile('file')){
             $file=Input::file('file');
             $file->move('img',$file->getClientOriginalName());
+         return $file->getClientOriginalName();
         }
 
-        return "Uploaded";
+       
 
 
     }

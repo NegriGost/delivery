@@ -47,6 +47,18 @@ return [
         'redirect' => 'http://swakuda.delivery.com/login/facebook/callback',
     ],
 
+     'linkedin' => [
+        'client_id' => '864atanh4re411',         // Your GitHub Client ID
+        'client_secret' => 'AqcMAxw0wUKAfDFs', // Your GitHub Client Secret
+        'redirect' => 'http://swakuda.delivery.com/login/linkedin/callback',
+    ],
+
+     'twitter' => [
+        'client_id' => 'gCIDHO2LKsZ8m22eWAxspcIM4',         // Your GitHub Client ID
+        'client_secret' => 'l1MFKIWayKxY9DdztI07UzaNnw5sydZWI6spVuJJA0406UhGSp', // Your GitHub Client Secret
+        'redirect' => 'http://swakuda.delivery.com/login/twitter/callback',
+    ],
+
 
 
 ];
