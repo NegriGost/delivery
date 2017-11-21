@@ -41,7 +41,7 @@
 			    " name="senhaf"  placeholder="confirme a senha">
 			   </div>
 
- 		 	   <center><button type="submit" class="btn btn-success btn-lg">Criar Nova Conta</button></center>
+ 		 	   <center><button type="submit" class="btn btn-success btn-lg">Criar Conta</button></center>
 
  		 	  <!--  <div class="text-center">
 				   <a href="{{url('/form_login_cliente')}}">Login</a>

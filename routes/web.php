@@ -27,11 +27,11 @@ Route::get('/form_registar_cliente', function () {
     return view('clientes.registar_cliente');
 });
 
-Route::get('/form_autenticar_usuario', function () {
+Route::get('/form_login_cliente', function () {
     return view('clientes.login_cliente');
 });
 
-//=================================REstaurantes=========================================
+//=================================Reestaurantes=========================================
 
 Route::post('/lista_de_restaurante','RestauranteController@index');
 
