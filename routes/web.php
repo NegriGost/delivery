@@ -22,9 +22,13 @@ Route::get('/mapa', function () {
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 
-
+//=========================cliente===========================================
 Route::get('/form_registar_cliente', function () {
     return view('clientes.registar_cliente');
+});
+
+Route::get('/form_login_cliente', function () {
+    return view('cliente.login_cliente');
 });
 
 //=================================REstaurantes=========================================
