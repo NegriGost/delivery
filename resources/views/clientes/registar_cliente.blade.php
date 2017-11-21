@@ -43,9 +43,9 @@
 
  		 	   <center><button type="submit" class="btn btn-success btn-lg">Criar Nova Conta</button></center>
 
- 		 	   <div class="text-center">
+ 		 	  <!--  <div class="text-center">
 				   <a href="{{url('/form_login_cliente')}}">Login</a>
-			   </div>
+			   </div> -->
 
 		   </div>
 	
