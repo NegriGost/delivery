@@ -106,12 +106,11 @@ body {
     background-repeat:no-repeat;
     background-size:cover;
     color: #fff;
-    padding: 150px 25px;
     font-family: Montserrat, sans-serif;
     height:650px;
 }
 .jumbotron-dash{
-    background-color:rgba(0,0,0,0.7);
+    background-color:rgba(0,0,0,0.2);
     color: #fff;
     font-family: Montserrat, sans-serif;
     height: 55px !important;
@@ -125,6 +124,9 @@ body {
   color:white;
 }
 
+.btn {
+    border-radius:0 !important;
+}
 footer{
   background-color:rgba(0,0,0,0.8);
   height:100px;

@@ -8,7 +8,16 @@ use App\Produto;
 use Illuminate\Support\Facades\Input;
 class RestauranteController extends Controller
 {
-    
+        
+    //formulario para registar restaurante
+    public function registar(){
+        return view('restaurantes.form_restaurante');
+    }
+
+
+
+
+
     //Busca todos os retaurantes em funcao da localizacao do cliente
     public function index(Request $request){
 

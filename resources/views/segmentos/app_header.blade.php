@@ -7,13 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          @if(Session::has('sessao_cliente'))
-              <a class="navbar-brand" href="/cliente_perfil/{{$usuario->id_usuario}}"><img src="{{url('img/logokuda1.png')}}" alt="Swakuda" class="img-responsive img-logo"></a>
-          @elseif(Session::has('sessao_restaurante'))
-             <a class="navbar-brand" href="/restaurante_perfil/{{$restaurante->id_restaurante}}"><img src="{{url('img/logokuda1.png')}}" alt="Swakuda" class="img-responsive img-logo"></a>
-          @else
             <a class="navbar-brand" href="/"><img src="{{url('img/logokuda1.png')}}" alt="Swakuda" class="img-responsive img-logo"></a>
-          @endif
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -25,9 +19,9 @@
                               <a data-toggle="dropdown" class="dropdown-toggle"><img   src="{{url('img/user.png')}}" class="img-resposinve img-circle  img-user" ></a>
 
                             <ul class="dropdown-menu col-md-offset-4">
-                                <li><a href="/form_editar_perfil/{{$usuario->id_usuario}}">Editar Perfil</a></li>
+                                <li><a href="/form_editar_perfil">Editar Perfil</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li><a href="{{url('gestao_de_enderecos')}}">Meus Enderecos</a></li>
+                                <li><a href="{{url('meus_enderecos')}}">Meus Enderecos</a></li>
                                 <li role="presentation" class="divider"></li>
                                 <li><a href="#">Meus Pedidos</a></li>
                                 <li role="presentation" class="divider"></li>
@@ -45,15 +39,13 @@
                                   <li><a href="{{url('sair')}}" ><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
                                 </ul>
                             </li>
-
                        @else
                          
                           <li><a href="{{url('form_registar_restaurante')}}">Registe seu restaurante</a></li>
                           <li><a href="{{url('form_registar_cliente')}}"><span class="glyphicon glyphicon-user"></span>Registe-se</a></li>
-                          <li><a href="{{url('form_Autenticar')}}"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                          <li><a href="{{url('form_login')}}"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
 
                        @endif
-
                 </ul>
               </div><!--/.nav-collapse -->
            </div>

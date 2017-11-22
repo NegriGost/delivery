@@ -20,7 +20,6 @@
     <link href="{{asset('css/workaround.css')}}" rel="stylesheet">
     <link href="{{asset('css/estilo.css')}}" rel="stylesheet">
 
- 
   </head>
 
   <body>
@@ -31,7 +30,7 @@
      @yield('jumbotron')
 
     <!--Conteudo-->
-    <div class="container">
+    <div class="container-fluid">
        @yield('conteudo')
     </div>
 
