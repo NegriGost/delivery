@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('inicio.index');
 });
+Route::get('/mapa', function () {
+    return view('restaurantes.mapa');
+});
 
 //=======================Routes de Login com redes sociais=============================
 Route::get('login/{service}', 'UsuarioController@redirectToProvider');
@@ -34,6 +37,7 @@ Route::get('/sms',function(){
 	return "SMS Enviada com sucesso!!!";
 });
 
+Route::get('/userlocation','RestauranteController@userLocation');
 Route::get('/form_registar_restaurante','RestauranteController@registar');
 Route::get('/lista_de_restaurantes','RestauranteController@restaurantes');
 Route::get('/restaurantes_da_cozinha/{id}','RestauranteController@restaurantes_cozinha');

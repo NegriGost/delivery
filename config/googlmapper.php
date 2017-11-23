@@ -93,7 +93,7 @@ return [
     | location.
     |
     */
-    'locate' => false,
+    'locate' =>false,
 
     /*
     |--------------------------------------------------------------------------
@@ -103,7 +103,7 @@ return [
     | The default zoom level Googlmapper should use.
     |
     */
-    'zoom' =>18,
+    'zoom' =>14,
 
     /*
     |--------------------------------------------------------------------------
@@ -213,7 +213,7 @@ return [
         | Display a custom icon for markers. (Link to an image)
         |
         */
-        'icon' => '',
+        'icon' => 'img/restaurante.png',
 
         /*
         |--------------------------------------------------------------------------

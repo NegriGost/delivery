@@ -15,7 +15,44 @@ use App\Endereco;
 use DB;
 class RestauranteController extends Controller
 {
+    
+    //exibir a localizacao do cliente   
+    public function userLocation(){
+        $conteudo='<center>
+                         <h4 class="text-success text-center">
+                            Vc esta aqui!!<h5 class="text-success text-center">Escolha o Restaurante<br>mais proximo de si
+                         </h5></h4>
+                    </center>';
+       
+       Mapper::map(
+        -25.9511482,32.5994816,
+        ['marker'=>false,'locate'=>true, 'markers'=>['icon'=>'img/clientes.png']
+        ])->informationWindow(
+            -25.9511482,32.5994816,
+            $conteudo,
+            ['open'=>true,'maxWidth'=>250]
+       );
+       
+       return view('restaurantes.mapa_cliente',compact('restaurantes'));
+    }
+
+
+    public function restauranteLocation(){
         
+        $restaurantes =Restaurante::all();
+        $restaurantes->each(function($enderecos)
+        {
+              $content='<center><h4 class="text-success text-center">'.$enderecos->rest_nome.'</h4><h5>'.$enderecos->rest_endereco.'</h5><a class="btn btn-success btn-block" href="/carrinho_de_compras/'.$enderecos->id_restaurante.'">Visualizar Cadapio</a></center>';
+                Mapper::informationWindow($enderecos->rest_lat,$enderecos->rest_long,$content,['open'=>false]);
+        });
+
+         return view('restaurantes.mapa_cliente',compact('restaurantes'));
+
+    }
+
+
+
+
     //formulario para registar restaurante
     public function registar(){
         $cozinhas=TipoDeCozinha::all();
@@ -62,6 +99,10 @@ class RestauranteController extends Controller
                 return "<script>alert('Erro de conexao com a internet,Ou Local nao Encontrado')</script>";
             }
 
+
+
+
+
             $address=new Endereco;
             $address->id_usuario=3;
             $address->end_nome=$endereco;
@@ -98,7 +139,7 @@ class RestauranteController extends Controller
         //Marcador difault eh cidade de Maputo
         $id=3;
         $endereco=Endereco::where('id_usuario','=',$id)->first();
-        Mapper::map($endereco->end_lat,$endereco->end_long, ['marker' =>true,'markers'=>['icon'=>'/img/cliente.png']]);
+        Mapper::map($endereco->end_lat,$endereco->end_long, ['marker' =>true,'markers'=>['icon'=>'/img/clientes.png']]);
         // Informacao do endereco para cada restaurante
         $restaurantes =Restaurante::all();
 
