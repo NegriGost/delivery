@@ -20,7 +20,6 @@
 			    <input type="text" class="form-control" name="txt_nome"  id="txt_nome"  placeholder="Introduza o nome do restaurante">
 			  </div>
 	
-		      
 
 		      <div class="form-group">
 			 	<label for="txt_numero">Numero:</label>
@@ -29,10 +28,9 @@
 		      <div class="form-group">
 				  <label for="txt_cozinha">Tipo de Cozinha:</label>
 				  <select class="form-control" id="txt_cozinha" name="txt_cozinha">
-				  	{{--	@foreach($cozinhas as $coz)
-				    	<option value="{{$coz->id_tpcozinha}}">{{$coz->tpc_nome}}</option>
-				    @endforeach --}}
-				    <option value="Rodrigues">Comida de Carro</option>
+				  		@foreach($cozinhas as $coz)
+				    		<option value="{{$coz->id_cozinha}}">{{$coz->coz_nome}}</option>
+				        @endforeach
 				  </select>
 	        </div>
 

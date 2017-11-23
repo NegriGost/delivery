@@ -37,7 +37,7 @@
 					  	</div>
 
 					  	<div class="col-md-2">
-					  		<a href="/login/google"><img src="/img/Google.png" alt="Google"></a>
+					  		<a href="/login/google"><img src="/img/Googlep.png" alt="Google"></a>
 					  	</div>
 
 					  	<div class="col-md-2">

@@ -28,19 +28,22 @@
 @section('conteudo')
 
 	<div class="row">
-		<div class="col-md-8">			
+
+	<div class="container">	
+		<div class="col-md-8">
+						
 					<form>
 						<div class="row">
 							@foreach($produto as $prod)
-							<div class="col-sm-4">
+							<div class="col-md-4">
 									<div class="panel panel-default" style="background-color:#f1f1f1;padding:10px;cursor:move;border-radius:5px">
 										<div class="panel-body text-center" >
 		
 											<center>
-												<img src="/img/{{$prod->imagem}}" style="width:160px;border-radius:5px;height: 150px" alt="Restaurante didatico icm" class="img-responsive img-drag" data-id="{{$prod->id_produto}}" data-nome="{{$prod->nome}}" data-preco="{{$prod->preco}}"   >
+												<img src="/img/{{$prod->prod_imagem}}" style="width:160px;border-radius:5px;height: 150px" alt="Restaurante didatico icm" class="img-responsive img-drag" data-id="{{$prod->id_produto}}" data-nome="{{$prod->prod_nome}}" data-preco="{{$prod->prod_preco}}"   >
 											</center>
-											<h4 class="text-primary text-center" style="font-size:16px">{{$prod->nome}}</h4>
-											<h4 class="text-danger text-center">MZN {{$prod->preco}}</h4>
+											<h4 class="text-primary text-center" style="font-size:16px">{{$prod->prod_nome}}</h4>
+											<h4 class="text-danger text-center">MZN {{$prod->prod_preco}}</h4>
 										</div>
 									</div>
 
@@ -49,27 +52,29 @@
 
 						</div><!--fim da Linha-->
 				   </form><!--Fim do formulario-->
-
+				   
 		</div><!--Fim da Row 8-->
+	
+		<div class=" col-md-4" >			
+			<div class="panel panel-default" class="nav nav-pills nav-stacked" data-spy="affix" style="width:25%">
+					<div class="panel-heading" >
+						<h4 class="text-success text-center"><span style="font-size:30px" class="glyphicon glyphicon-shopping-cart"></span>{{$restaurante->rest_nome}}</h4>
+					</div>
 
+					<div class="panel-body" >
+							<div class="area_drag_protuto  table-responsive " style="height:200px">
+							</div>
+					</div>
 
-	<div class=" col-md-4" >			
-		<div class="panel panel-default" class="nav nav-pills nav-stacked" data-spy="affix" style="width:25%">
-				<div class="panel-heading" >
-					<h4 class="text-success text-center"><span style="font-size:30px" class="glyphicon glyphicon-shopping-cart"></span>Restaurante Continental</h4>
-				</div>
-
-				<div class="panel-body" >
-						<div class="area_drag_protuto  table-responsive " style="height:200px">
-						</div>
-				</div>
-
-				<div class="panel-footer panel-default">
-					<button type="button" class="btn btn-success btn-block">Finalizar pedido</button>
-				</div>
-			    
+					<div class="panel-footer panel-default">
+						<button type="button" class="btn btn-success btn-block">Finalizar pedido</button>
+					</div>
+				    
+			</div>
 		</div>
-	</div>
 </div>
+
+</div>
+<br><br><br><br><br><br>
 @endsection
 

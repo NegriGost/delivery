@@ -7,6 +7,8 @@ use Socialite;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Session;
+use App\Usuario;
+use App\Endereco;
 
 class UsuarioController extends Controller
 {
@@ -18,7 +20,7 @@ class UsuarioController extends Controller
     	return view('clientes.form_login');
     }
 
-    public function recuperar_usuario(){
+    public function recuperar_senha(){
     	return view('clientes.form_recuperar');
     }
 
@@ -29,12 +31,15 @@ class UsuarioController extends Controller
     	return view("clientes.form_editar_perfil");
     }
 
+    public function pedidos_do_usuario(){
+    	return view('clientes.pedidos_cliente');
+    }
+
     //formulario para gravar o usuario
     public function salvar(Request $request){
     	//Validacao
             $this->validate($request,[
                 'txtNome'=>'required|between:3,30|alpha_num',
-                'txtApelido'=>'required|between:3,30|alpha_num',
                 'txtTelefone'=>'required|between:9,9|alpha_num',
                 'txtSenha'=>'required|between:8,30',
                 'txtSenhaf'=>'required|same:txtSenha',
@@ -48,22 +53,20 @@ class UsuarioController extends Controller
 
             if($clientes->count()!=0){
                 $erros_bd=['Ja existe um usuario com mesmo nome ou com mesmo email'];
-                return view('form_registar_cliente',compact('erros_bd'));
+                return view('cliente.form_cliente',compact('erros_bd'));
             }
 
             //Inserir na base de dados
             $novo_cliente=new Usuario;
             $novo_cliente->usu_nome=$request->txtNome;
-            $novo_cliente->usu_apelido=$request->txtApelido;
             $novo_cliente->usu_telefone=$request->txtTelefone;
             $novo_cliente->usu_senha=hash::make($request->txtSenha);
             $novo_cliente->usu_email=$request->txtEmail;
-            $novo_cliente->status='1';
             $novo_cliente->save();
 
             $alert_success=['Usuario Salvado com sucesso!!!'];
 
-            return view('cliente.create',compact('alert_success'));
+            return view('clientes.form_cliente',compact('alert_success'));
     }
 
     //funcao  para efectuar o login na base de dados
@@ -93,7 +96,7 @@ class UsuarioController extends Controller
         //Abrindo Sessao de usuario
         Session::put('sessao_cliente','sim');
         Session::put('nome',$user->usu_nome);
-         return $this->perfil_do_usuario();
+        return redirect('/');
    }
 
    	//Efectuar Login com as redes sociais
@@ -108,7 +111,7 @@ class UsuarioController extends Controller
         //Abrindo Sessao de usuario
         Session::put('sessao_cliente','sim');
         Session::put('nome',$user->name);
-        return $this->perfil_do_usuario();
+        return redirect('/');
     }
     //====================================================
 

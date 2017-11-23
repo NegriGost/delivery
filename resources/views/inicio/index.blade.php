@@ -2,16 +2,20 @@
 <!--Definicao de Jumbotron-->
 @section('jumbotron')
     
-<div class="jumbotron jumbotron-index text-center" style="padding-top:150px;">
+<div class="jumbotron jumbotron-index text-center" style="padding-top:120px;">
   <h1>Ache ja, o seu prato predileto<br>Onde quer que esteja.</h1><br>
   <form class="form-inline" method="post" action="{{url('lista_de_restaurante')}}">
     <!--csrf_field-->
     {{csrf_field()}}
     <div class="input-group">
-      <input type="text" class="form-control input-lg" name="txt_autocomplete" id="txt_autocomplete" size="50" placeholder="Informe o seu endereco">
-      <div class="input-group-btn">
-        <button type="submit" class="btn btn-success btn-lg" >Pesquisar</button>
-      </div>
+      <input type="text" class="form-control input-lg" name="txt_autocomplete" id="txt_autocomplete" size="20" placeholder="Informe o seu endereco">
+    </div>
+
+     <div class="input-group">
+      <input style="width:150px" type="number" name="txt_numero" class="form-control input-lg" placeholder="numero">
+    </div>
+    <div class="input-group-btn" >
+       <center> <button style="width:405px;margin-top:4px" type="submit" class="btn btn-success btn-lg btn-block" >Pesquisar</button></center>
     </div>
   </form>
 </div>

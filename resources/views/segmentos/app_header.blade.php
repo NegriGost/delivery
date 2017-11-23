@@ -21,9 +21,9 @@
                             <ul class="dropdown-menu col-md-offset-4">
                                 <li><a href="/form_editar_perfil">Editar Perfil</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li><a href="{{url('meus_enderecos')}}">Meus Enderecos</a></li>
+                                <li><a href="/meus_enderecos">Meus Enderecos</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li><a href="#">Meus Pedidos</a></li>
+                                <li><a href="/meus_pedidos">Meus Pedidos</a></li>
                                 <li role="presentation" class="divider"></li>
                                 <li><a href="{{url('sair')}}" ><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
                             </ul>
