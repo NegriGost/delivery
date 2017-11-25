@@ -1,7 +1,4 @@
 @extends('restaurantes.index_restaurante')
-@section('jumbotron')
-
-@endsection
 @section('restaurante_content')
 <div class="container">
 <!-- Primeira Linha -->

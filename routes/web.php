@@ -11,21 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('inicio.index');
-});
-Route::get('/mapa', function () {
-    return view('restaurantes.mapa');
-});
+Route::get('/','HomeController@index');
 
 //=======================Routes de Login com redes sociais=============================
 Route::get('login/{service}', 'UsuarioController@redirectToProvider');
 Route::get('login/{service}/callback', 'UsuarioController@handleProviderCallback');
 //=================================Restaurantes=========================================
-Route::post('/lista_de_restaurante','RestauranteController@buscar_endereco');
-Route::get('/mapa_restaurantes','RestauranteController@mapa_restaurantes');
+Route::get('/mapa_de_restaurantes','RestauranteController@restauranteLocation');
+Route::get('/userlocation','RestauranteController@userLocation');
 Route::get('/carrinho_de_compras/{id}','RestauranteController@compras');
+Route::get('/form_registar_restaurante','RestauranteController@registar');
 Route::post('/form_gravar_restaurante','RestauranteController@salvar');
+Route::get('/lista_de_restaurantes','RestauranteController@restaurantes');
+Route::get('/restaurantes_da_cozinha/{id}','RestauranteController@restaurantes_cozinha');
 
 Route::get('/sms',function(){
 	$nexmo = app('Nexmo\Client');
@@ -37,20 +35,9 @@ Route::get('/sms',function(){
 	return "SMS Enviada com sucesso!!!";
 });
 
-Route::get('/userlocation','RestauranteController@userLocation');
-Route::get('/form_registar_restaurante','RestauranteController@registar');
-Route::get('/lista_de_restaurantes','RestauranteController@restaurantes');
-Route::get('/restaurantes_da_cozinha/{id}','RestauranteController@restaurantes_cozinha');
-
+//================================Produtos=====================================================
 Route::get('/produtos','ProdutoController@compra');
 Route::get('/pagamentos','ProdutoController@compra');
-
-Route::get('/upload',function(){
-	return view('inicio.upload');
-});
-
-Route::post('/uploadimg','RestauranteController@imgupload');
-
 //=======================================Cliente======================================================
 Route::get('/form_registar_cliente','UsuarioController@registar_usuario');
 Route::get('/form_login','UsuarioController@login');

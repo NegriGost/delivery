@@ -1,4 +1,4 @@
- <script src="{{asset('js/emulador.js')}}"></script>
+    <script src="{{asset('js/emulador.js')}}"></script>
     <script src="{{asset('js/jQuery-2.1.4.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}/"></script>
     <script src="{{asset('js/workaround.js')}}"></script>
@@ -116,16 +116,15 @@
     
     </script>
 
-<script>
+<!--     <script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
-      window.onload=initMap;
       var map, infoWindow;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -25.9511482, lng: 32.5994816},
+          center: {lat: -34.397, lng: 150.644},
           zoom: 6
         });
         infoWindow = new google.maps.InfoWindow;
@@ -138,8 +137,13 @@
               lng: position.coords.longitude
             };
 
+            $('#latitude').val(pos.lat);
+
+            $('#longitude').val(pos.lng);
+             //alert(pos.lat+" "+pos.lng);
+
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
+            infoWindow.setContent('Estou aqui.');
             infoWindow.open(map);
             map.setCenter(pos);
           }, function() {
@@ -151,15 +155,141 @@
         }
       }
 
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-        infoWindow.open(map);
-      }
+      // function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+      //   infoWindow.setPosition(pos);
+      //   infoWindow.setContent(browserHasGeolocation ?
+      //                         'Error: The Geolocation service failed.' :
+      //                         'Error: Your browser doesn\'t support geolocation.');
+      //   infoWindow.open(map);
+      // }
     </script>
-    
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnOio2-38aqc86jOFG4soPgvx6lVDIPRc&callback=initMap">
+    </script> -->
+
+    <!-- <script type="text/javascript">
+
+      window.onload=geoFindMe;
+
+      function geoFindMe() {
+      var output = document.getElementById("out");
+
+      if (!navigator.geolocation){
+        output.innerHTML = "<p>O seu Browser nao suporta geolocalizacao</p>";
+        return;
+      }
+
+      function success(position) {
+        var latitude  = position.coords.latitude;
+        var longitude = position.coords.longitude;
+
+        output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+
+        var img = new Image();
+        img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+
+        output.appendChild(img);
+      }
+
+      function error() {
+        output.innerHTML = "Descupe nao conseguimos ti localizar";
+      }
+
+      output.innerHTML = "<p>Locating…</p>";
+
+      navigator.geolocation.getCurrentPosition(success, error);
+    }
     </script>
+ -->
+<!-- 
+ <script type="text/javascript">
+
+      window.onload=getLocation;
+   var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+ </script> -->
+
+
+ <!-- <script type="text/javascript">
+   
+
+  window.onload=getMyLocation
+
+var map;
+
+function getMyLocation(){
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(displayLocation);
+  }else{
+    alert('Nao conseguimos te localizar');
+  }
+
+}
+
+
+function displayLocation(position){
+  var latitude=position.coords.latitude;
+  var longitude=position.coords.longitude;
+  
+
+  var latlong=new google.maps.LatLng(latitude,longitude);
+  alert('Ola'+latitude+"  "+longitude);
+  
+  showMap(latlong);
+  createMarker(latlong);
+}
+
+
+function showMap(latlng){
+  var mapOptions={
+  center:latlng,
+  zoom:18,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  map=new google.maps.Map(document.getElementById('map'),mapOptions);
+} 
+
+function createMarker(latlng){
+
+  var markerOptions={
+    position:latlng,
+    map:map,
+    animation:google.maps.Animation.DROP,
+    clickable:true
+  }
+  
+  var marker=new google.maps.Marker(markerOptions);
+}
+
+
+function addInfoWindow(marker,latlng,content){
+
+  var infoWindowOptions={
+    content:content,
+    position:latlng
+  };
+
+  var infoWindow=new google.maps.InfoWindow(infoWindowOptions);
+    google.maps.event.addListener(marker,'click',function(){
+    infoWindow.open(map);
+  });
+
+}
+
+
+ </script> -->
+<!--   <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnOio2-38aqc86jOFG4soPgvx6lVDIPRc&callback=showMap">
+  </script> -->

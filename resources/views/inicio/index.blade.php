@@ -2,12 +2,8 @@
 <!--Definicao de Jumbotron-->
 @section('jumbotron')   
 <div class="jumbotron jumbotron-index text-center" style="padding-top:120px;">
-  <h1>Ache ja, o seu prato predileto<br>Onde quer que esteja.</h1><br>
-  <form class="form-inline">
-    <!--csrf_field-->
-    {{csrf_field()}}
-         <a href="/userlocation" class="btn btn-success btn-lg" >Click Aqui, Para Fazer o Seu Pedido</a>
-  </form>
+    <h1>Ache ja, o seu prato predileto<br>Onde quer que esteja.</h1><br>
+    <a href="/userlocation" class="btn btn-success btn-lg" >Click Aqui, Para Fazer o Seu Pedido</a>
 </div>
 @endsection
 
@@ -15,7 +11,9 @@
 @section('conteudo')
   <div class="starter-template">
       <h1>Swakuda Software Development</h1>
-      <p class="lead">Somos especialisados em desenvolvimento de software's de inovacao para o mercado actual, atualmente desenvolvemos uma plataforma que permite que qualquer pessoa possa comprar comida online e receber em sua casa sem se deslocar um centimetro se quer,veja os termos de referencia e comece a usar Swakuda.</p>
+      <p class="lead">
+         Somos especialisados em desenvolvimento de software's de inovacao para o mercado actual, atualmente desenvolvemos uma plataforma que permite que qualquer pessoa possa comprar comida online e receber em sua casa sem se deslocar um centimetro se quer,veja os termos de referencia e comece a usar Swakuda.
+    </p>
  </div>
 
 	<div class="row">
@@ -71,14 +69,3 @@
         </div>
     </div>
 @endsection
-
-
-   <!-- Mapa auto-complete -->
-   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnOio2-38aqc86jOFG4soPgvx6lVDIPRc&libraries=places"></script>
-    
-    <script type="text/javascript">
-      google.maps.event.addDomListener(window,'load',function(){
-        var input=document.getElementById('txt_autocomplete');
-        var auto=new google.maps.places.Autocomplete(input);
-      });
-    </script>
